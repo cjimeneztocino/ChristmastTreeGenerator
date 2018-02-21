@@ -1,3 +1,6 @@
+<?php
+    require_once('src/Class/ShapeBasic.php');
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,19 +16,10 @@ and open the template in the editor.
     <body styles="font-family: monospace;">
         <h1>Hello Kyto Christomast Tree</h1>
         <?php
-        require_once('src/Class/ShapeBasic.php');
-        
         $Shape = new ShapeBasic();
-        $Shape->setSize(11);
+        $Shape->setSize(5);
         
-        
-        echo 'Size: '.$Shape->getSize().'<br>';
-        echo 'Center: '.$Shape->getCenterPosition().'<br>';
-        
-        echo '<div class="bordered">';
-        $Shape->PrintHeaderTree();
-        $Shape->printBodyTree();
-        echo '</div>';
+        $Shape->printShapeOnBrowser();
         ?>
     </body>
 </html>

@@ -10,6 +10,8 @@ class ShapeBasic {
     
     private $size;
     
+    private $mainCharacter = 'X';
+    
     private $increment = 2;
     
     function __construct() {
@@ -24,12 +26,24 @@ class ShapeBasic {
         $this->size = $size;
     }
     
-    public function PrintHeaderTree(){
+    public function printShapeOnBrowser() {
+        echo '<h2>Shape of '.$this->size.' size</h2>';
+        echo '<div class="bordered">';
+        $this->printHeaderTree();
+        $this->printBodyTree();
+        echo '</div>';
+    }
+    
+    public function printShapeOnTerminal() {
+        
+    }
+    
+    public function printHeaderTree(){
        $timestoprint = 1;
        $whitetoprint = $this->size-$this->increment;
        
-        for ($i = 1; $i <= $this->size; $i++) {
-            if ($i === 1 || $i === $this->size) {
+        for ($i = 1; $i < $this->size; $i++) {
+            if ($i === 1) {
                 $this->printFirstLast();
             } elseif ($i < $this->getCenterPosition()) {
                 echo '<div class="monospace">';
@@ -55,6 +69,7 @@ class ShapeBasic {
                 $whitetoprint = $whitetoprint + $this->increment;
             }
         }
+        $this->printFirstLast();
     }
     
     public function printBodyTree(){
@@ -84,7 +99,7 @@ class ShapeBasic {
     
     private function printShapeTimes($times){
         for ($i = 0; $i< $times; $i++) {
-            echo 'X';
+            echo $this->mainCharacter;
         }
     }
     
@@ -94,12 +109,11 @@ class ShapeBasic {
         }
     }
     
-    public function getCenterPosition() {
+    private function getCenterPosition() {
         return intdiv($this->size, 2) + 1;
     }
     
     private function printFirstLast(){
-         echo '<div class="monospace">'.str_repeat('&nbsp;', $this->size-$this->increment).'+'.str_repeat('&nbsp;', $this->size-$this->increment).'</div>';
-        
+        echo '<div class="monospace">'.str_repeat('&nbsp;', $this->size-$this->increment).'+'.str_repeat('&nbsp;', $this->size-$this->increment).'</div>';
     }
 }
