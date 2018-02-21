@@ -34,10 +34,6 @@ class ShapeBasic {
         echo '</div>';
     }
     
-    public function printShapeOnTerminal() {
-            print(" Hallo Terminal\n");
-    }
-    
     public function printHeaderTree(){
        $timestoprint = 1;
        $whitetoprint = $this->size-$this->increment;
@@ -116,4 +112,5 @@ class ShapeBasic {
     private function printFirstLast(){
         echo '<div class="monospace">'.str_repeat('&nbsp;', $this->size-$this->increment).'+'.str_repeat('&nbsp;', $this->size-$this->increment).'</div>';
     }
+    
 }
