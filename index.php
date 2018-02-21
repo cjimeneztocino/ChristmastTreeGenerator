@@ -13,7 +13,7 @@ require_once('src/Class/ShapeBasic.php');
         <div><a href="formPage.php">go to Form</a></div>
         <?php
         $Shape = new ShapeBasic();
-        $Shape->setSize(19);
+        $Shape->setSize(random_int(5, 31));
 
         $Shape->printShapeOnBrowser();
         ?>

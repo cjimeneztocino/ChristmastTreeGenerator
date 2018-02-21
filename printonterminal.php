@@ -2,5 +2,5 @@
 
 require_once('src/Class/ShapeBasicOnTerminal.php');
 $shape =  new ShapeBasicOnTerminal();
-$shape->setSize(7);
+$shape->setSize(random_int(5, 31));
 $shape->printShapeOnTerminal();
