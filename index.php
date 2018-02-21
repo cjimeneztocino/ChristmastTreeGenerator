@@ -1,5 +1,5 @@
 <?php
-    require_once('src/Class/ShapeBasic.php');
+require_once('src/Class/ShapeBasic.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
         <?php
         $Shape = new ShapeBasic();
         $Shape->setSize(19);
-        
+
         $Shape->printShapeOnBrowser();
         ?>
     </body>
