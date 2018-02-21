@@ -11,6 +11,7 @@ require_once('src/Class/ShapeBasic.php');
     <body styles="font-family: monospace;">
         <h1>Hello Kyto Christomast Tree</h1>
         <div><a href="formPage.php">go to Form</a></div>
+        <div><a href="index.php">Try again</a></div>
         <?php
         $Shape = new ShapeBasic();
         
