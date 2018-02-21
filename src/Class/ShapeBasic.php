@@ -35,7 +35,7 @@ class ShapeBasic {
     }
     
     public function printShapeOnTerminal() {
-        
+            print(" Hallo Terminal\n");
     }
     
     public function printHeaderTree(){

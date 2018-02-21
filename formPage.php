@@ -29,9 +29,11 @@ and open the template in the editor.
             <input type="submit" value="Print Tree">
         </form>
         <?php
-        $size = $_GET["sizeOption"];
-        $shape->setSize($size);
-        $shape->printShapeOnBrowser();
+        if ( $_GET["sizeOption"]) {
+            $shape->setSize($_GET["sizeOption"]);
+            $shape->printShapeOnBrowser();
+        }
+            
         ?>
     </body>
 </html>
