@@ -1,5 +1,6 @@
 <?php
 require_once('src/Class/ShapeBasic.php');
+require_once('src/Class/TreeGenerator.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,20 +9,31 @@ require_once('src/Class/ShapeBasic.php');
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <title></title>
     </head>
-    <body styles="font-family: monospace;">
-        <h1>Hello Kyto Christomast Tree</h1>
-        <div><a href="formPage.php">go to Form</a></div>
-        <div><a href="index.php">Try again</a></div>
+    <body>
+        <h1><a href="index.php">Hello Form</a></h1>
         <?php
-        $Shape = new ShapeBasic();
         
-        $rand = random_int(5, 51);
-        while ($rand%2 == 0) {
-            $rand = random_int(5, 51);
-        }
-        $Shape->setSize($rand);
 
-        $Shape->printShapeOnBrowser();
+        (isset($_GET["sizeOption"])) ? $selected = $_GET["sizeOption"] : $selected = 5;
         ?>
+        <form action="index.php" method="get">
+            <select name="sizeOption">
+                <option value="5" <?php if ($selected == 5) echo 'selected' ?> >Size S</option>
+                <option value="7" <?php if ($selected == 7) echo 'selected' ?> >Size M</option>
+                <option value="11" <?php if ($selected == 11) echo 'selected' ?> >Size L</option>
+            </select>
+            <input type="submit" value="Print Tree">
+        </form>
+        <?php
+        if ($_GET["sizeOption"]) {
+            
+//            $treeGenerator = new TreeGenerator($_GET["sizeOption"]);
+//            var_dump($treeGenerator->HeaderTree());
+            
+            $shape = new ShapeBasic($_GET["sizeOption"]);
+            $shape->printShapeOnBrowser();
+        }
+        ?>
+        <div class="torandon"><a href="randonSizeTreeGenerator.php">go to TreeGenerator Randon Size</a></div>
     </body>
 </html>

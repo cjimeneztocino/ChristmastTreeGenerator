@@ -1,10 +1,12 @@
 <?php
 
 require_once('src/Class/ShapeBasicOnTerminal.php');
-$shape = new ShapeBasicOnTerminal();
+require_once('src/Class/TreeGenerator.php');
+
 $rand = random_int(5, 21);
 while ($rand % 2 == 0) {
     $rand = random_int(5, 21);
 }
-$shape->setSize($rand);
+
+$shape = new ShapeBasicOnTerminal($rand);
 $shape->printShapeOnTerminal();
