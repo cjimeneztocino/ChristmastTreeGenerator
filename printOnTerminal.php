@@ -1,5 +1,4 @@
 <?php
-
 require_once('src/Class/ShapeBasicOnTerminal.php');
 require_once('src/Class/TreeGenerator.php');
 

@@ -10,7 +10,7 @@ require_once('src/Class/TreeGenerator.php');
         <title></title>
     </head>
     <body>
-        <h1><a href="index.php">Hello Form</a></h1>
+        <h1><a href="index.php">Select size to Printo a Christmast Tree</a></h1>
         <?php
         
 
@@ -26,10 +26,6 @@ require_once('src/Class/TreeGenerator.php');
         </form>
         <?php
         if ($_GET["sizeOption"]) {
-            
-//            $treeGenerator = new TreeGenerator($_GET["sizeOption"]);
-//            var_dump($treeGenerator->HeaderTree());
-            
             $shape = new ShapeBasic($_GET["sizeOption"]);
             $shape->printShapeOnBrowser();
         }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of ShapeBasic
  *
@@ -13,9 +14,7 @@ class ShapeBasic {
 
     function __construct($size) {
         $this->setSize($size);
-        echo 'Constructor Shape call';
-        $this->treegenerator =  new TreeGenerator($this->size);
-        
+        $this->treegenerator = new TreeGenerator($this->size);
     }
 
     function getSize() {
@@ -30,17 +29,15 @@ class ShapeBasic {
         $this->treeHeader = $this->treegenerator->HeaderTree();
         $this->treeBody = $this->treegenerator->BodyTree();
         echo '<h2>Shape of ' . $this->size . ' size</h2>';
-       
-//        var_dump($this->treeHeader);
+
         echo '<div class="bordered">';
         foreach ($this->treeHeader as $value) {
-             echo '<div class="monospace">'.$value.'</div>';
+            echo '<div class="monospace">' . $value . '</div>';
         }
         echo '<br>';
         foreach ($this->treeBody as $value) {
-            echo '<div class="monospace">'.$value.'</div>';
+            echo '<div class="monospace">' . $value . '</div>';
         }
-        
         echo '</div>';
     }
 

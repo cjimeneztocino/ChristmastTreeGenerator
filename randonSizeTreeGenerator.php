@@ -10,8 +10,8 @@ require_once('src/Class/TreeGenerator.php');
         <title></title>
     </head>
     <body styles="font-family: monospace;">
-        <h1>Hello Kyto Christomast Tree</h1>
-        <div><a href="index.php">go to Form</a></div>
+        <h1>Hello Randon Size Christmast Tree Generator</h1>
+        <div><a href="index.php">go to Index</a></div>
         <div><a href="randonSizeTreeGenerator.php">Try again</a></div>
         <?php
        
